@@ -13,14 +13,12 @@ public class AuthService {
     public AuthService(UserRepository userRepo) {
         this.userRepo = userRepo;
     }
+    public User register(User user) {
+        return userRepo.save(user);
+    }
 
     public boolean authenticate(String username, String password) {
         Optional<User> userOpt = userRepo.findByUsername(username);
         return userOpt.map(u -> u.getPassword().equals(password)).orElse(false);
-    }
-
-    public boolean authorize(User user, String action) {
-        // For now, allow all actions. Extend with roles/permissions as needed.
-        return true;
     }
 }

@@ -21,7 +21,8 @@ public class AuctionItem extends User{
     private LocalDateTime endTime;
     private String status;
 
-    public AuctionItem() {}
+    public AuctionItem() {
+    }
 
     public AuctionItem(String itemId, String title, String description, double startingPrice,
                        LocalDateTime startTime, LocalDateTime endTime, String status) {
@@ -32,9 +33,5 @@ public class AuctionItem extends User{
         this.startTime = startTime;
         this.endTime = endTime;
         this.status = status;
-    }
-
-    public double getCurrentHighestBid() {
-        return startingPrice;
     }
 }

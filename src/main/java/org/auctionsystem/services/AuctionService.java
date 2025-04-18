@@ -25,11 +25,11 @@ public class AuctionService {
                 .orElseThrow(() -> new AuctionNotFoundException("Auction not found"));
     }
 
-    public List<AuctionItem> listAuctions() {
+    public List<AuctionItem> getAllAuctions() {
         return auctionRepo.findAll();
     }
 
-    public List<AuctionItem> listOngoingAuctions() {
+    public List<AuctionItem> getOngoing() {
         return auctionRepo.findByStartTimeBeforeAndEndTimeAfter(
                 java.time.LocalDateTime.now(), java.time.LocalDateTime.now());
     }

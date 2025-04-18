@@ -25,7 +25,8 @@ public class Bid extends User{
     private double amount;
     private LocalDateTime timestamp;
 
-    public Bid() {}
+    public Bid() {
+    }
 
     public Bid(String bidId, User bidder, AuctionItem auctionItem, double amount,
                LocalDateTime timestamp) {
@@ -34,8 +35,5 @@ public class Bid extends User{
         this.auctionItem = auctionItem;
         this.amount = amount;
         this.timestamp = timestamp;
-    }
-    public boolean placeBid() {
-        return true;
     }
 }
