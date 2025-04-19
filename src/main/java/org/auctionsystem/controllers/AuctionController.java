@@ -3,12 +3,11 @@ package org.auctionsystem.controllers;
 import lombok.RequiredArgsConstructor;
 import org.auctionsystem.Dtos.AuctionItemDto;
 import org.auctionsystem.Dtos.DtoMapper;
-import org.auctionsystem.Dtos.request.createAuctionRequest;
+import org.auctionsystem.Dtos.request.CreateAuctionRequest;
 import org.auctionsystem.models.AuctionItem;
 import org.auctionsystem.models.Bid;
 import org.auctionsystem.services.AuctionService;
 import org.auctionsystem.services.BidService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +22,7 @@ public class AuctionController {
     private final BidService bidService;
 
     @PostMapping("/register")
-    public ResponseEntity<AuctionItemDto> createAuction(@RequestBody createAuctionRequest req) {
+    public ResponseEntity<AuctionItemDto> createAuction(@RequestBody CreateAuctionRequest req) {
         AuctionItem entity = DtoMapper.toAuctionItemEntity(new AuctionItemDto(
                 null, req.getTitle(), req.getDescription(),
                 req.getStartingPrice(), req.getStartTime(),

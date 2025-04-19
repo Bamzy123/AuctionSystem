@@ -8,5 +8,6 @@ import lombok.Setter;
 public class PlaceBidRequest {
     private String bidderId;
     private double amount;
+
     public PlaceBidRequest() {}
 }

@@ -7,12 +7,12 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class createAuctionRequest {
+public class CreateAuctionRequest {
     private String title;
     private String description;
     private double startingPrice;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
-    public createAuctionRequest() {}
+    public CreateAuctionRequest() {}
 }
